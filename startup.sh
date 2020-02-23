@@ -17,8 +17,9 @@ git clone https://github.com/AM2H-Development/influx.git
 cd influx
 docker-compose up -d
 
-# Theia und Nginx Reerse-Proxy
+# Theia und Nginx Reverse-Proxy
 cd ~
 git clone https://github.com/AM2H-Development/theia.git
 cd theia
 docker-compose up -d
+docker network connect theia_reverse-proxy portainer
