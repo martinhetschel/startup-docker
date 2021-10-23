@@ -3,7 +3,7 @@ cd ~
 docker volume create portainer_data
 docker stop portainer
 docker rm portainer
-docker run -d -p 8000:8000 -p 9091:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data --restart=unless-stopped --name=portainer portainer/portainer-ce
+docker run -d -p 8000:8000 -p 9091:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data --restart=unless-stopped --name=portainer portainer/portainer-ce --sslcert /var/certs/fullchain.pem --sslkey /var/certs/privkey.pem
 
 # Mosquitto
 cd ~
